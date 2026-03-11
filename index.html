@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rachana Gardas | Data Engineer</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     * {
@@ -23,25 +26,38 @@
       background: #000000;
       color: #f5f5f5;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: #000000;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(10px);
       padding: 18px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #1a1a1a;
+      border-bottom: 1px solid #151515;
     }
 
-    nav h3 {
-      font-size: 20px;
-      font-weight: 600;
-      color: #ffffff;
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
       letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #ffffff, #60a5fa, #ffffff);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 4s linear infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
     }
 
     nav ul {
@@ -63,44 +79,94 @@
     }
 
     .hero {
-      min-height: 92vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 80px 8%;
-      background: #000000;
-      animation: fadeIn 1.1s ease;
+      padding: 80px 8% 60px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(59,130,246,0.22) 0%, rgba(59,130,246,0.05) 38%, transparent 70%);
+      filter: blur(30px);
+      top: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0;
     }
 
     .hero-content {
-      max-width: 900px;
+      max-width: 980px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 1s ease;
+    }
+
+    .intro-line {
+      display: inline-block;
+      color: #8fbfff;
+      border: 1px solid #1e3a5f;
+      background: rgba(59,130,246,0.08);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-      font-size: 58px;
-      font-weight: 700;
+      font-size: 68px;
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 16px;
       color: #ffffff;
-      margin-bottom: 14px;
-      letter-spacing: 0.5px;
     }
 
     .hero h2 {
-      font-size: 22px;
-      font-weight: 400;
+      font-size: 24px;
+      font-weight: 500;
       color: #60a5fa;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .hero p {
-      max-width: 760px;
+      max-width: 800px;
       margin: 0 auto;
       font-size: 18px;
-      color: #cfcfcf;
+      color: #d4d4d4;
+    }
+
+    .hero-tags {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-tag {
+      padding: 10px 16px;
+      border: 1px solid #1f2937;
+      border-radius: 999px;
+      background: #070707;
+      color: #e5e7eb;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .hero-tag:hover {
+      border-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 0 14px rgba(96, 165, 250, 0.18);
     }
 
     .buttons {
-      margin-top: 32px;
+      margin-top: 34px;
       display: flex;
       justify-content: center;
       gap: 16px;
@@ -108,12 +174,14 @@
     }
 
     .btn {
-      padding: 12px 24px;
-      border-radius: 10px;
+      padding: 13px 22px;
+      border-radius: 12px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       transition: all 0.3s ease;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .btn-primary {
@@ -124,7 +192,7 @@
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 18px rgba(255, 255, 255, 0.22);
+      box-shadow: 0 0 18px rgba(255,255,255,0.18);
     }
 
     .btn-secondary {
@@ -135,23 +203,30 @@
 
     .btn-secondary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 18px rgba(96, 165, 250, 0.25);
-      background: rgba(37, 99, 235, 0.08);
+      background: rgba(37,99,235,0.08);
+      box-shadow: 0 0 18px rgba(96,165,250,0.20);
     }
 
     section {
-      max-width: 1150px;
+      max-width: 1180px;
       margin: auto;
       padding: 90px 8%;
-      background: #000000;
     }
 
     .section-title {
       text-align: center;
       font-size: 34px;
-      font-weight: 600;
-      margin-bottom: 26px;
+      font-weight: 700;
+      margin-bottom: 18px;
       color: #ffffff;
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      margin: 0 auto 32px;
+      text-align: center;
+      color: #bdbdbd;
+      font-size: 16px;
     }
 
     .about-text {
@@ -163,27 +238,43 @@
     }
 
     .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: center;
-      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px;
+      margin-top: 34px;
     }
 
-    .skill {
-      background: #0b0b0b;
-      border: 1px solid #202020;
-      color: #e5e7eb;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 14px;
-      transition: all 0.3s ease;
+    .skill-box {
+      background: #050505;
+      border: 1px solid #171717;
+      border-radius: 16px;
+      padding: 20px 16px;
+      text-align: center;
+      transition: 0.35s ease;
     }
 
-    .skill:hover {
-      transform: translateY(-2px);
+    .skill-box:hover {
+      transform: translateY(-5px);
       border-color: #2563eb;
-      box-shadow: 0 0 12px rgba(96, 165, 250, 0.18);
+      box-shadow: 0 0 18px rgba(96,165,250,0.14);
+    }
+
+    .skill-box i {
+      font-size: 28px;
+      color: #60a5fa;
+      margin-bottom: 12px;
+    }
+
+    .skill-box h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .skill-box p {
+      font-size: 13px;
+      color: #bfbfbf;
     }
 
     .cards {
@@ -195,8 +286,8 @@
 
     .card {
       background: #050505;
-      border: 1px solid #1a1a1a;
-      border-radius: 16px;
+      border: 1px solid #171717;
+      border-radius: 18px;
       padding: 24px;
       transition: all 0.35s ease;
       opacity: 0;
@@ -211,7 +302,7 @@
     .card:hover {
       transform: translateY(-6px);
       border-color: #2563eb;
-      box-shadow: 0 0 20px rgba(96, 165, 250, 0.14);
+      box-shadow: 0 0 20px rgba(96,165,250,0.14);
     }
 
     .mini-title {
@@ -237,7 +328,7 @@
 
     .contact-links {
       text-align: center;
-      margin-top: 18px;
+      margin-top: 22px;
     }
 
     .contact-links a {
@@ -253,11 +344,10 @@
     }
 
     footer {
-      background: #000000;
       text-align: center;
       padding: 28px;
       color: #8b8b8b;
-      border-top: 1px solid #1a1a1a;
+      border-top: 1px solid #151515;
     }
 
     .reveal {
@@ -271,10 +361,10 @@
       transform: translateY(0);
     }
 
-    @keyframes fadeIn {
+    @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(18px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
@@ -293,7 +383,7 @@
       }
 
       .hero h1 {
-        font-size: 40px;
+        font-size: 42px;
       }
 
       .hero h2 {
@@ -303,13 +393,17 @@
       .hero p {
         font-size: 16px;
       }
+
+      .intro-line {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <h3>Rachana Gardas</h3>
+    <div class="logo">Rachana Gardas</div>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -321,58 +415,101 @@
 
   <section class="hero">
     <div class="hero-content">
+      <div class="intro-line">Open to Data Engineering Opportunities</div>
       <h1>Rachana Gardas</h1>
       <h2>Data Engineer | Snowflake | Databricks | Python | SQL</h2>
       <p>
-        Data Engineer with 4+ years of experience building scalable ETL/ELT pipelines,
-        cloud data platforms, and analytics-ready datasets using Snowflake, Databricks,
-        Azure Data Factory, Python, SQL, and PySpark.
+        I build scalable ETL/ELT pipelines, cloud data platforms, and analytics-ready datasets
+        using Snowflake, Databricks, Azure Data Factory, Python, SQL, and PySpark.
       </p>
 
+      <div class="hero-tags">
+        <span class="hero-tag">Snowflake</span>
+        <span class="hero-tag">Databricks</span>
+        <span class="hero-tag">ETL / ELT</span>
+        <span class="hero-tag">Cloud Data Platforms</span>
+        <span class="hero-tag">Analytics Engineering</span>
+      </div>
+
       <div class="buttons">
-        <a class="btn btn-primary" href="Rachana_Gardas_Resume.pdf" target="_blank">Download Resume</a>
-        <a class="btn btn-secondary" href="https://github.com/Gardasrachana" target="_blank">GitHub</a>
-        <a class="btn btn-secondary" href="https://www.linkedin.com/in/rachana-gardas-4445b41b2/" target="_blank">LinkedIn</a>
+        <a class="btn btn-primary" href="#projects"><i class="fa-solid fa-diagram-project"></i> View Projects</a>
+        <a class="btn btn-secondary" href="Rachana_Gardas_Resume.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Resume</a>
+        <a class="btn btn-secondary" href="https://github.com/Gardasrachana" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/rachana-gardas-4445b41b2/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
       </div>
     </div>
   </section>
 
   <section id="about" class="reveal">
     <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">A quick snapshot of what I do and where I add value.</p>
     <p class="about-text">
-      I build reliable data pipelines and cloud-based data solutions that turn raw data
-      into business-ready datasets. My experience includes ETL/ELT development, medallion
-      architecture, data modeling, and analytics enablement across Snowflake, Databricks,
-      BigQuery, AWS, Azure, and Power BI.
+      I build reliable data pipelines and cloud-based data solutions that turn raw data into
+      business-ready datasets. My experience includes ETL/ELT development, medallion architecture,
+      data modeling, and analytics enablement across Snowflake, Databricks, BigQuery, AWS, Azure,
+      and Power BI.
     </p>
   </section>
 
   <section id="skills" class="reveal">
     <h2 class="section-title">Skills</h2>
+    <p class="section-subtitle">Core technologies I use to build modern data platforms.</p>
+
     <div class="skills-grid">
-      <span class="skill">Python</span>
-      <span class="skill">SQL</span>
-      <span class="skill">PySpark</span>
-      <span class="skill">Snowflake</span>
-      <span class="skill">Databricks</span>
-      <span class="skill">Azure Data Factory</span>
-      <span class="skill">BigQuery</span>
-      <span class="skill">AWS</span>
-      <span class="skill">Azure</span>
-      <span class="skill">GCP</span>
-      <span class="skill">dbt</span>
-      <span class="skill">Airflow</span>
-      <span class="skill">Power BI</span>
-      <span class="skill">Talend</span>
-      <span class="skill">Data Warehousing</span>
-      <span class="skill">ETL / ELT</span>
-      <span class="skill">Data Modeling</span>
-      <span class="skill">Data Quality Validation</span>
+      <div class="skill-box">
+        <i class="fa-brands fa-python"></i>
+        <h4>Python</h4>
+        <p>ETL pipelines, automation, data processing</p>
+      </div>
+
+      <div class="skill-box">
+        <i class="fa-solid fa-database"></i>
+        <h4>Snowflake</h4>
+        <p>Warehousing, transformation, analytics-ready models</p>
+      </div>
+
+      <div class="skill-box">
+        <i class="fa-solid fa-layer-group"></i>
+        <h4>Databricks</h4>
+        <p>Lakehouse pipelines, PySpark workflows</p>
+      </div>
+
+      <div class="skill-box">
+        <i class="fa-solid fa-code"></i>
+        <h4>SQL</h4>
+        <p>Transformations, optimization, data modeling</p>
+      </div>
+
+      <div class="skill-box">
+        <i class="fa-solid fa-cloud"></i>
+        <h4>Cloud</h4>
+        <p>AWS, Azure, GCP data platform experience</p>
+      </div>
+
+      <div class="skill-box">
+        <i class="fa-solid fa-chart-column"></i>
+        <h4>Power BI</h4>
+        <p>Dashboards, KPI reporting, business insights</p>
+      </div>
+
+      <div class="skill-box">
+        <i class="fa-solid fa-gears"></i>
+        <h4>ETL / ELT</h4>
+        <p>Scalable ingestion and transformation pipelines</p>
+      </div>
+
+      <div class="skill-box">
+        <i class="fa-solid fa-network-wired"></i>
+        <h4>Data Modeling</h4>
+        <p>Curated layers, marts, reporting datasets</p>
+      </div>
     </div>
   </section>
 
   <section id="experience" class="reveal">
     <h2 class="section-title">Experience Highlights</h2>
+    <p class="section-subtitle">Selected areas where I’ve built and improved data systems.</p>
+
     <div class="cards">
       <div class="card">
         <div class="mini-title">Softvel LLC</div>
@@ -405,6 +542,8 @@
 
   <section id="projects" class="reveal">
     <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle">A few representative projects that show my data engineering approach.</p>
+
     <div class="cards">
       <div class="card">
         <div class="mini-title">Snowflake + dbt</div>
@@ -440,14 +579,15 @@
 
   <section id="contact" class="reveal">
     <h2 class="section-title">Contact</h2>
+    <p class="section-subtitle">Let’s connect for data engineering opportunities and collaborations.</p>
     <p class="about-text">
-      I’m open to Data Engineering opportunities involving modern cloud platforms,
-      scalable data pipelines, and analytics-focused data solutions.
+      I’m open to roles involving modern cloud platforms, scalable pipelines,
+      analytics engineering, and data platform development.
     </p>
     <div class="contact-links">
-      <a href="mailto:rachanapatel0406@gmail.com">Email</a>
-      <a href="https://github.com/Gardasrachana" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/rachana-gardas-4445b41b2/" target="_blank">LinkedIn</a>
+      <a href="mailto:rachanapatel0406@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="https://github.com/Gardasrachana" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/rachana-gardas-4445b41b2/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
     </div>
   </section>
 
