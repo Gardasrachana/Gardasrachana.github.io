@@ -341,6 +341,23 @@
       margin-bottom: 10px;
     }
 
+    .tools-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+
+    .tool-chip {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #0a0a0a;
+      border: 1px solid #1f2937;
+      color: #dbeafe;
+      font-size: 12px;
+    }
+
     .architecture-box {
       margin-top: 18px;
       padding: 16px;
@@ -371,6 +388,44 @@
       color: #60a5fa;
       font-weight: 700;
       text-align: center;
+    }
+
+    .project-outcome {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-left: 3px solid #2563eb;
+      background: #030303;
+      border-radius: 10px;
+      color: #d4d4d4;
+      font-size: 14px;
+    }
+
+    .project-actions {
+      margin-top: 16px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .project-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid #2563eb;
+      color: #60a5fa;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .project-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(37,99,235,0.08);
+      box-shadow: 0 0 14px rgba(96,165,250,0.16);
     }
 
     .repo-link {
@@ -623,6 +678,13 @@
           into analytics-ready models, and supports downstream reporting.
         </p>
 
+        <div class="tools-row">
+          <span class="tool-chip">Snowflake</span>
+          <span class="tool-chip">dbt</span>
+          <span class="tool-chip">SQL</span>
+          <span class="tool-chip">Power BI</span>
+        </div>
+
         <div class="architecture-box">
           <div class="architecture-title">Architecture Flow</div>
           <div class="architecture-flow">
@@ -637,6 +699,16 @@
             Power BI Dashboard
           </div>
         </div>
+
+        <div class="project-outcome">
+          Helped structure raw data into analytics-ready reporting layers for better business visibility.
+        </div>
+
+        <div class="project-actions">
+          <a class="project-btn" href="https://github.com/Gardasrachana" target="_blank">
+            <i class="fa-brands fa-github"></i> View Code
+          </a>
+        </div>
       </div>
 
       <div class="card">
@@ -646,6 +718,13 @@
           Implemented a medallion-style data pipeline using Databricks and PySpark
           for scalable transformation from raw to curated data layers.
         </p>
+
+        <div class="tools-row">
+          <span class="tool-chip">Databricks</span>
+          <span class="tool-chip">PySpark</span>
+          <span class="tool-chip">ADF</span>
+          <span class="tool-chip">Lakehouse</span>
+        </div>
 
         <div class="architecture-box">
           <div class="architecture-title">Architecture Flow</div>
@@ -661,6 +740,16 @@
             Reporting / Analytics
           </div>
         </div>
+
+        <div class="project-outcome">
+          Improved pipeline structure and data usability by organizing transformations across bronze, silver, and gold layers.
+        </div>
+
+        <div class="project-actions">
+          <a class="project-btn" href="https://github.com/Gardasrachana" target="_blank">
+            <i class="fa-brands fa-github"></i> View Code
+          </a>
+        </div>
       </div>
 
       <div class="card">
@@ -670,6 +759,13 @@
           Built analytics dashboards and reporting pipelines using Power BI, AWS S3,
           Amazon Redshift, and modeled datasets for business insights.
         </p>
+
+        <div class="tools-row">
+          <span class="tool-chip">Power BI</span>
+          <span class="tool-chip">AWS S3</span>
+          <span class="tool-chip">Redshift</span>
+          <span class="tool-chip">SQL</span>
+        </div>
 
         <div class="architecture-box">
           <div class="architecture-title">Architecture Flow</div>
@@ -684,6 +780,16 @@
             <span>↓</span>
             Power BI Reports
           </div>
+        </div>
+
+        <div class="project-outcome">
+          Enabled KPI tracking and trend analysis through modeled datasets and business-facing dashboards.
+        </div>
+
+        <div class="project-actions">
+          <a class="project-btn" href="https://github.com/Gardasrachana" target="_blank">
+            <i class="fa-brands fa-github"></i> View Code
+          </a>
         </div>
       </div>
     </div>
