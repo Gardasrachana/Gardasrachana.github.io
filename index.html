@@ -112,6 +112,18 @@
       animation: fadeUp 1s ease;
     }
 
+    .profile-pic {
+      width: 165px;
+      height: 165px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 18%;
+      border: 3px solid #2563eb;
+      margin: 0 auto 22px;
+      display: block;
+      box-shadow: 0 0 24px rgba(96,165,250,0.30);
+    }
+
     .intro-line {
       display: inline-block;
       color: #8fbfff;
@@ -606,6 +618,13 @@
         font-size: 13px;
       }
 
+      .profile-pic {
+        width: 130px;
+        height: 130px;
+        object-position: center 16%;
+        margin-bottom: 18px;
+      }
+
       .cert-image {
         height: 200px;
       }
@@ -631,6 +650,8 @@
 
   <section class="hero">
     <div class="hero-content">
+      <img src="profile.jpg" alt="Rachana Gardas" class="profile-pic">
+
       <div class="intro-line">Snowflake • Databricks • Python • ETL / ELT • Cloud Data Platforms</div>
       <h1>Rachana Gardas</h1>
       <h2>Data Engineer focused on Snowflake, Databricks, Python, SQL, and scalable ETL/ELT pipelines</h2>
