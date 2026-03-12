@@ -410,6 +410,122 @@
       color: #93c5fd;
     }
 
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .cert-card {
+      background: #050505;
+      border: 1px solid #171717;
+      border-radius: 18px;
+      padding: 24px;
+      transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-6px);
+      border-color: #2563eb;
+      box-shadow: 0 0 20px rgba(96,165,250,0.14);
+    }
+
+    .cert-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid #1f2937;
+      margin-bottom: 18px;
+      background: #0a0a0a;
+    }
+
+    .cert-badge {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.10);
+      border: 1px solid #1e3a5f;
+      color: #93c5fd;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .cert-card h3 {
+      font-size: 24px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .cert-meta {
+      font-size: 14px;
+      color: #bdbdbd;
+      margin-bottom: 6px;
+    }
+
+    .cert-id {
+      font-size: 14px;
+      color: #9ca3af;
+      margin-bottom: 12px;
+    }
+
+    .cert-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    .cert-skill {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #0a0a0a;
+      border: 1px solid #1f2937;
+      color: #dbeafe;
+      font-size: 12px;
+    }
+
+    .cert-note {
+      margin-top: 6px;
+      padding: 14px;
+      border-left: 3px solid #2563eb;
+      background: #030303;
+      border-radius: 10px;
+      color: #d4d4d4;
+      font-size: 14px;
+    }
+
+    .cert-actions {
+      margin-top: auto;
+      padding-top: 16px;
+    }
+
+    .cert-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #60a5fa;
+      border: 1px solid #2563eb;
+      transition: all 0.3s ease;
+    }
+
+    .cert-btn:hover {
+      background: rgba(37,99,235,0.08);
+      box-shadow: 0 0 16px rgba(96,165,250,0.18);
+    }
+
     .contact-links {
       text-align: center;
       margin-top: 22px;
@@ -485,6 +601,10 @@
       .hero-guide {
         font-size: 13px;
       }
+
+      .cert-image {
+        height: 200px;
+      }
     }
   </style>
 </head>
@@ -498,23 +618,24 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#github-projects">GitHub</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <section class="hero">
     <div class="hero-content">
-      <div class="intro-line">Open to Data Engineering, Analytics Engineering, and GenAI-Ready Data Roles</div>
+      <div class="intro-line">Open to Data Engineering, Analytics Engineering, and AI-Ready Data Roles</div>
       <h1>Rachana Gardas</h1>
-      <h2>Data Engineer with 4+ years of experience building scalable pipelines, cloud data platforms, analytics-ready data products, and AI-ready data foundations</h2>
+      <h2>Data Engineer with 4+ years of experience building scalable pipelines, cloud data platforms, analytics-ready data products, and strong Snowflake foundations</h2>
       <p>
         I design and build modern data solutions using Snowflake, Databricks, Azure Data Factory, Python, SQL, PySpark, BigQuery, and AWS. My work focuses on transforming raw data into trusted, analytics-ready datasets through scalable ETL/ELT pipelines, medallion architecture, data modeling, reporting layers, and cloud migrations.
         <br><br>
-        Alongside core data engineering, I’m also interested in GenAI-focused data workflows, including building clean and structured data foundations that support intelligent analytics, retrieval-ready pipelines, and future AI use cases.
+        I’m especially interested in building clean and structured data foundations that support both traditional analytics and future AI or GenAI-driven workflows.
       </p>
 
       <div class="hero-guide">
-        Start with <span>Experience</span>, explore <span>Featured Projects</span>, and review my public work in <span>GitHub Projects</span>.
+        Start with <span>Experience</span>, explore <span>Projects</span>, and review my <span>Certifications</span> and <span>GitHub</span>.
       </div>
 
       <div class="hero-tags">
@@ -523,7 +644,7 @@
         <span class="hero-tag">ETL / ELT</span>
         <span class="hero-tag">Cloud Data Platforms</span>
         <span class="hero-tag">Analytics Engineering</span>
-        <span class="hero-tag">GenAI Data Foundations</span>
+        <span class="hero-tag">AI-Ready Data Foundations</span>
       </div>
 
       <div class="buttons">
@@ -541,7 +662,7 @@
     <p class="about-text">
       I’m a Data Engineer with experience designing reliable cloud-based data pipelines and business-ready data solutions across Snowflake, Databricks, BigQuery, AWS, Azure, and Power BI. My background includes ETL/ELT development, medallion architecture, data warehousing, query optimization, cloud migration, data quality validation, and analytics enablement.
       <br><br>
-      I enjoy solving end-to-end data problems — from ingestion and transformation to curated reporting layers — and I’m especially interested in building data foundations that can support both traditional analytics and next-generation AI and GenAI workflows.
+      I enjoy solving end-to-end data problems — from ingestion and transformation to curated reporting layers — and I’m especially interested in building data foundations that can support both traditional analytics and next-generation AI workflows.
     </p>
   </section>
 
@@ -607,7 +728,7 @@
       <div class="skill-box">
         <i class="fa-solid fa-brain"></i>
         <h4>AI-Ready Data</h4>
-        <p>Structured foundations for analytics and GenAI workflows</p>
+        <p>Structured foundations for analytics and future AI workflows</p>
       </div>
     </div>
   </section>
@@ -634,7 +755,7 @@
         </div>
 
         <div class="project-outcome">
-          Built automated transformations, data quality checks, and validation frameworks that improved pipeline reliability, reduced processing issues, and created stronger foundations for analytics and AI-ready data usage.
+          Built automated transformations, data quality checks, and validation frameworks that improved pipeline reliability and created stronger foundations for analytics-ready data usage.
         </div>
       </div>
 
@@ -655,7 +776,7 @@
         </div>
 
         <div class="project-outcome">
-          Improved processing efficiency and query performance through optimization and better transformation logic, helping convert raw data into faster, cleaner, analytics-ready models.
+          Improved processing efficiency and query performance through optimization and better transformation logic, helping convert raw data into cleaner analytics-ready models.
         </div>
       </div>
 
@@ -663,7 +784,7 @@
         <div class="mini-title">LTIMindtree | Data Engineer</div>
         <h3>Built enterprise ETL pipelines and large-scale cloud migration workflows</h3>
         <p>
-          Designed end-to-end ETL pipelines using Talend and Databricks for large sales, inventory, and operational datasets supporting retail analytics, On-Shelf Availability (OSA), and Suggested Order Quantity (SOQ) reporting for enterprise business teams.
+          Designed end-to-end ETL pipelines using Talend and Databricks for large sales, inventory, and operational datasets supporting retail analytics, On-Shelf Availability (OSA), and Suggested Order Quantity (SOQ) reporting for enterprise teams.
         </p>
 
         <div class="tools-row">
@@ -676,7 +797,7 @@
         </div>
 
         <div class="project-outcome">
-          Migrated datasets from AWS S3 to Google Cloud Storage and BigQuery, supported production monitoring and SQL validation, and reduced manual operational effort through stronger data quality and reporting workflows.
+          Migrated datasets from AWS S3 to Google Cloud Storage and BigQuery, supported production monitoring and SQL validation, and strengthened data quality for analytics and reporting workflows.
         </div>
       </div>
     </div>
@@ -684,14 +805,14 @@
 
   <section id="projects" class="reveal">
     <h2 class="section-title">Featured Projects</h2>
-    <p class="section-subtitle">Representative project work reflecting my data engineering experience, architecture thinking, analytics enablement, and AI-ready data design approach.</p>
+    <p class="section-subtitle">Representative project work reflecting my data engineering experience, architecture thinking, analytics enablement, and structured data design approach.</p>
 
     <div class="cards">
       <div class="card">
         <div class="mini-title">Snowflake + dbt</div>
         <h3>End-to-End Data Pipeline</h3>
         <p>
-          Built a modern ELT workflow that loads raw data into Snowflake, transforms it into analytics-ready models, and supports downstream reporting, dashboarding, and future reusable data consumption.
+          Built a modern ELT workflow that loads raw data into Snowflake, transforms it into analytics-ready models, and supports downstream reporting, dashboarding, and reusable data consumption.
         </p>
 
         <div class="tools-row">
@@ -718,7 +839,7 @@
         </div>
 
         <div class="project-outcome">
-          Structured raw data into reusable and analytics-ready reporting layers that improve visibility and create a stronger foundation for future AI-driven use cases.
+          Structured raw data into reusable reporting layers that improve visibility and support better downstream analytics consumption.
         </div>
       </div>
 
@@ -726,7 +847,7 @@
         <div class="mini-title">Databricks + PySpark</div>
         <h3>Lakehouse Data Platform</h3>
         <p>
-          Implemented a medallion-style pipeline using Databricks and PySpark to process raw source data into curated layers for scalable analytics, high-quality reporting, and governed data consumption.
+          Implemented a medallion-style pipeline using Databricks and PySpark to process raw source data into curated layers for scalable analytics, data quality, and governed consumption.
         </p>
 
         <div class="tools-row">
@@ -748,12 +869,12 @@
             <span>↓</span>
             Gold Layer
             <span>↓</span>
-            Reporting / Analytics / AI-Ready Consumption
+            Reporting / Analytics
           </div>
         </div>
 
         <div class="project-outcome">
-          Improved pipeline structure, data quality, and usability by organizing transformations across bronze, silver, and gold layers for more scalable downstream use.
+          Improved pipeline structure and data usability by organizing transformations across bronze, silver, and gold layers for scalable downstream use.
         </div>
       </div>
 
@@ -761,7 +882,7 @@
         <div class="mini-title">Analytics + Cloud Reporting</div>
         <h3>Business Reporting and Insight Enablement</h3>
         <p>
-          Built reporting pipelines and dashboards using Power BI, AWS S3, Redshift-style warehouse workflows, and modeled datasets to support KPI tracking, trend analysis, and business decision-making.
+          Built reporting pipelines and dashboards using Power BI, cloud storage, warehouse-style workflows, and modeled datasets to support KPI tracking, trend analysis, and business decision-making.
         </p>
 
         <div class="tools-row">
@@ -788,7 +909,7 @@
         </div>
 
         <div class="project-outcome">
-          Enabled business teams to track performance metrics, trends, and operational insights through better-modeled datasets and stakeholder-friendly dashboards.
+          Enabled business teams to track performance metrics and trends through better-modeled datasets and stakeholder-friendly dashboards.
         </div>
       </div>
     </div>
@@ -800,11 +921,171 @@
     <div id="repo-list" class="cards"></div>
   </section>
 
+  <section id="certifications" class="reveal">
+    <h2 class="section-title">Certifications</h2>
+    <p class="section-subtitle">Selected certifications that strengthen my Snowflake, cloud data, and big data engineering profile.</p>
+
+    <div class="cert-grid">
+      <div class="cert-card">
+        <img src="SnowPro%20Core%20Certificate%20image.jpg" alt="SnowPro Core Certificate" class="cert-image">
+        <div class="cert-badge">Featured Certification</div>
+        <h3>SnowPro Core Certification</h3>
+        <p class="cert-meta"><strong>Issued by:</strong> Snowflake</p>
+        <p class="cert-meta"><strong>Issued:</strong> Jul 2025</p>
+        <p class="cert-meta"><strong>Expires:</strong> Jul 2027</p>
+        <p class="cert-id"><strong>Credential ID:</strong> S104470-250721-COF</p>
+
+        <p>
+          Validates strong understanding of Snowflake architecture, warehousing, RBAC, data loading, query optimization, governance, streams and tasks, semi-structured data, Snowpipe, and dbt-related Snowflake workflows.
+        </p>
+
+        <div class="cert-skills">
+          <span class="cert-skill">Snowflake Architecture</span>
+          <span class="cert-skill">RBAC</span>
+          <span class="cert-skill">Streams & Tasks</span>
+          <span class="cert-skill">Performance Tuning</span>
+          <span class="cert-skill">Snowpipe</span>
+          <span class="cert-skill">dbt for Snowflake</span>
+        </div>
+
+        <div class="cert-note">
+          This is my strongest certification for Snowflake-focused Data Engineer and Analytics Engineer roles.
+        </div>
+
+        <div class="cert-actions">
+          <a class="cert-btn" href="SnowPro%20Core%20Certificate%20image.jpg" target="_blank">
+            <i class="fa-solid fa-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <img src="SnowPro%20badge%20image.jpg" alt="SnowPro Badge" class="cert-image">
+        <div class="cert-badge">Snowflake Badge</div>
+        <h3>SnowPro Core Badge</h3>
+        <p class="cert-meta"><strong>Issued by:</strong> Snowflake</p>
+        <p class="cert-meta"><strong>Issued:</strong> Jul 2025</p>
+        <p class="cert-meta"><strong>Supports:</strong> Snowflake Engineer Branding</p>
+
+        <p>
+          Visual proof of SnowPro Core achievement, useful for portfolio branding and quick recruiter verification of Snowflake platform knowledge.
+        </p>
+
+        <div class="cert-skills">
+          <span class="cert-skill">Snowflake</span>
+          <span class="cert-skill">Core Concepts</span>
+          <span class="cert-skill">Warehousing</span>
+          <span class="cert-skill">Data Engineering</span>
+        </div>
+
+        <div class="cert-note">
+          Strong visual credential that reinforces my Snowflake-first data engineering profile.
+        </div>
+
+        <div class="cert-actions">
+          <a class="cert-btn" href="SnowPro%20badge%20image.jpg" target="_blank">
+            <i class="fa-solid fa-up-right-from-square"></i> View Badge
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <img src="Data%20Warehousing%20Workshop%20certificate.jpg" alt="Data Warehousing Workshop Certificate" class="cert-image">
+        <div class="cert-badge">Snowflake Workshop</div>
+        <h3>Hands-On Essentials: Data Warehousing Workshop</h3>
+        <p class="cert-meta"><strong>Issued by:</strong> Snowflake</p>
+        <p class="cert-meta"><strong>Issued:</strong> Jun 2025</p>
+
+        <p>
+          Focused on Snowflake databases, warehouses, SQL worksheets, external stages, and warehousing fundamentals that support practical cloud data engineering workflows.
+        </p>
+
+        <div class="cert-skills">
+          <span class="cert-skill">Snowflake Databases</span>
+          <span class="cert-skill">Warehouses</span>
+          <span class="cert-skill">SQL Worksheets</span>
+          <span class="cert-skill">External Stages</span>
+          <span class="cert-skill">PL/SQL</span>
+        </div>
+
+        <div class="cert-note">
+          Reinforces my data warehousing fundamentals and practical Snowflake environment skills.
+        </div>
+
+        <div class="cert-actions">
+          <a class="cert-btn" href="Data%20Warehousing%20Workshop%20certificate.jpg" target="_blank">
+            <i class="fa-solid fa-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <img src="SnowPro%20badge%20image.jpg" alt="Data Lake Workshop" class="cert-image">
+        <div class="cert-badge">Snowflake Workshop</div>
+        <h3>Hands-On Essentials: Data Lake Workshop</h3>
+        <p class="cert-meta"><strong>Issued by:</strong> Snowflake</p>
+        <p class="cert-meta"><strong>Issued:</strong> Jun 2025</p>
+
+        <p>
+          Covered querying staged data, file formats, directory tables, Parquet, GeoJSON, UDFs, marketplace shares, and external tables for practical data lake workflows in Snowflake.
+        </p>
+
+        <div class="cert-skills">
+          <span class="cert-skill">Stages</span>
+          <span class="cert-skill">Parquet</span>
+          <span class="cert-skill">External Tables</span>
+          <span class="cert-skill">GeoJSON</span>
+          <span class="cert-skill">UDFs</span>
+          <span class="cert-skill">Marketplace Data Shares</span>
+        </div>
+
+        <div class="cert-note">
+          Highlights practical experience with modern Snowflake data lake concepts and external data processing patterns.
+        </div>
+
+        <div class="cert-actions">
+          <a class="cert-btn" href="Data%20Lake%20Workshop%20certificate.html" target="_blank">
+            <i class="fa-solid fa-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <img src="PySpark%20certificate.jpg" alt="PySpark Certificate" class="cert-image">
+        <div class="cert-badge">Big Data Certification</div>
+        <h3>Hands-On PySpark for Big Data Analysis</h3>
+        <p class="cert-meta"><strong>Issued by:</strong> Udemy</p>
+        <p class="cert-meta"><strong>Issued:</strong> Feb 2022</p>
+
+        <p>
+          Strengthened practical PySpark understanding for distributed data processing, large-scale data analysis, and Spark-based data engineering foundations.
+        </p>
+
+        <div class="cert-skills">
+          <span class="cert-skill">PySpark</span>
+          <span class="cert-skill">Big Data Analysis</span>
+          <span class="cert-skill">Distributed Processing</span>
+          <span class="cert-skill">Spark Workflows</span>
+        </div>
+
+        <div class="cert-note">
+          Supports my Databricks and Spark-based data engineering profile with relevant big data fundamentals.
+        </div>
+
+        <div class="cert-actions">
+          <a class="cert-btn" href="PySpark%20certificate.jpg" target="_blank">
+            <i class="fa-solid fa-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="reveal">
     <h2 class="section-title">Contact</h2>
-    <p class="section-subtitle">Let’s connect for data engineering, analytics engineering, and GenAI-ready data opportunities.</p>
+    <p class="section-subtitle">Let’s connect for data engineering, analytics engineering, and Snowflake-focused opportunities.</p>
     <p class="about-text">
-      I’m open to opportunities involving modern cloud platforms, scalable data pipelines, analytics engineering, reporting systems, and data foundations that support both business intelligence and evolving AI workflows.
+      I’m open to opportunities involving modern cloud platforms, scalable data pipelines, analytics engineering, reporting systems, and strong Snowflake-based data solutions.
     </p>
     <div class="contact-links">
       <a href="mailto:rachanapatel0406@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
